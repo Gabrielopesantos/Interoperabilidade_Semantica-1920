@@ -1,0 +1,35 @@
+extends layout
+
+block content
+    .w3-container
+        h1 Informação SCOPUS
+        .w3-card-4
+            header.w3-container.w3-teal
+                h3 #{scopus.eid}
+            .w3-section.w3-container
+                label
+                    b Autores
+                input.w3-input.w3-border.w3-light-grey(id='ano' type='text'  value=scopus.authors readonly)
+                label
+                    b ISSN
+                input.w3-input.w3-border.w3-light-grey(id='authors' type='text' value=scopus.issn readonly)
+                label
+                    b ISBN
+                input.w3-input.w3-border.w3-light-grey(id='citations' type='text' value=scopus.isbn readonly)
+                label
+                    b Keywords
+                input.w3-input.w3-border.w3-light-grey(id='citations' type='text' value=scopus.keywords readonly)
+                label
+                    b Citações
+                input.w3-input.w3-border.w3-light-grey(id='ano' type='text'  value=scopus.citations readonly)
+                label
+                    b srcid
+                input.w3-input.w3-border.w3-light-grey(id='authors' type='text' value=scopus.srcid readonly)
+                label 
+                    b SJR
+            .w3-container
+                a(href='https://www.scimagojr.com/journalsearch.php?q=' + scopus.srcid + '&tip=sid&exact=no', title='SCImago Journal & Country Rank')
+                    img(border='0', src='https://www.scimagojr.com/journal_img.php?id=' + scopus.srcid, alt='SCImago Journal & Country Rank')
+
+                footer.w3-container.w3-teal.w3-padding-16
+                a(href='/').w3-button.w3-blue-grey Voltar à lista de artigos

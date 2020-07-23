@@ -1,0 +1,34 @@
+extends layout
+block content
+    .w3-container
+        h1 Lista de Artigos
+        .w3-card-4
+            .w3-container
+                table.w3-table-all.w3-tiny.w3-hoverable.w3-striped
+                    tr
+                        th Título
+                        th Tipo
+                        th Data de Publicação
+                        th(id = "contCol") Contribuidores
+                        th Publicador
+                        th EID
+                        th PutCode
+                        th WOS ID
+                        //- th URL
+                        th Scopus
+                    each a in data.artigos
+                        tr
+                            td= a.title
+                            td= a.type
+                            td= a.publication_date
+                            td= a.n_contributors
+                            td= a.journal_title
+                            td= a.eid
+                            td= a.putcode
+                            td= a.wosid
+                            //- td= a.url
+                            td
+                                a(href='/autores/' + data.orcid + '/scopus/' + a.eid).w3-button.w3-round-large.w3-blue-grey Mais 
+                
+            footer.w3-container.w3-teal.w3-padding-16
+                a(href='/').w3-button.w3-blue-grey Voltar à lista de autores

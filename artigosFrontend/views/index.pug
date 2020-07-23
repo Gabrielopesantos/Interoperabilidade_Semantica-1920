@@ -1,0 +1,25 @@
+extends layout
+block content
+    .w3-container
+        h1 Arquivo artigos
+        .w3-card-4
+            header.w3-container.w3-teal
+                h3 Lista de Autores
+            .w3-container
+                table.w3-table-all.w3-small.w3-hoverable
+                    tr
+                        th Id
+                        th ORCID
+                        th Nome
+                        th Biografia
+                        th Ver Artigos
+                    each a in lista
+                        tr
+                            td= a.author_id   
+                            td= a.orcid_id
+                            td= a.name
+                            td= a.biography
+                            td
+                                a(href='/autores/' + a.orcid_id + '/artigos').w3-button.w3-round-large.w3-blue-grey Mais 
+            footer.w3-container.w3-teal
+                address  Criado por Gabriel Santos
